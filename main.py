@@ -1,14 +1,11 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-from google.cloud import storage
+ 
 
 
-storage_client = storage.Client()
-bucket = storage_client.get_bucket('covidpredict1')
-blob = bucket.blob('model1.pkl')
-blob.download_to_filename('/tmp/model1.pkl')
-model = pickle.load(open('/tmp/model1.pkl','rb'))
+ 
+model = pickle.load(open('model1.pkl', 'rb'))
 
 
 
